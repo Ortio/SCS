@@ -28,11 +28,13 @@ class OrdersFactory extends Factory
 //            'color'             => $this->faker->randomElement(['золото','белый','черный','желтый','красный','синий']),
 //            'price'             => $this->faker->randomFloat(2,50, 10000),
             'sale_type'         => $this->faker->randomElement(['Самовывоз','Доставка','Почта','СДЭК']),
-            'receive'     => $this->faker->randomElement(['Наличные', 'Карта', 'Чек', 'СБЕР', 'Тинькофф']),
+            'receive'           => $this->faker->randomElement(['Наличные', 'Карта', 'Чек', 'СБЕР', 'Тинькофф']),
             'address'           => $this->faker->address,
             'delivery_price'    => $this->faker->randomFloat(2,200, 800),
-            'store'             => $this->faker->randomElement(['MyDilly', 'BabyWatch', 'PBS', 'Magic-Karaoke']),
-            'status'            => $this->faker->randomElement(['process', 'sold', 'refused', 'shipped']),
+            'comment'           => $this->faker->realText(200),
+            'zip'               => $this->faker->numberBetween(100000, 999999),
+            'store'             => $this->faker->randomElement(['MyDilly', 'BabyWatch', 'PBS', 'Magic-Karaoke', 'All-Aks']),
+            'status'            => $this->faker->randomElement(['process', 'sold', 'sold', 'sold', 'refused', 'shipped']),
             'sale_date'         => $this->faker->dateTimeBetween('-2 month', 'now'),
         ];
     }

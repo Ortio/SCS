@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Orders;
+use App\Models\SaleGoods;
 
 class OrdersController extends Controller
 {
@@ -14,6 +15,7 @@ class OrdersController extends Controller
      */
     public function index()
     {
+
         $items = Orders::all();
         return view('orders.index', compact('items'));
     }
@@ -36,18 +38,20 @@ class OrdersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        echo 'sadfsdaf';
+        dd($request);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Orders  $item
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Orders $item)
     {
-        //
+        $goods = $item->saleGoods;
+        return view('orders.single', compact(['item','goods']));
     }
 
     /**
@@ -70,7 +74,13 @@ class OrdersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $data = $request->except('_token');
+//        dd($data);
+//        Orders::updateOrCreate(['id'=>$id], $request->toArray());
+        Orders::where(['id'=>$id])->update($data);
+//        return redirect('orders');
+        return \Redirect::back();
     }
 
     /**

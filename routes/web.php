@@ -19,3 +19,12 @@ Route::get('/', function () {
 });
 
 Route::get('orders', [OrdersController::class, 'index']);
+
+
+Route::prefix('orders')->group(function (){
+    Route::get('create', [OrdersController::class, 'create']);
+    Route::get('{item}', [OrdersController::class, 'show']);//item - id
+    Route::post('{id}', [OrdersController::class, 'update']);
+    Route::post('create', [OrdersController::class, 'store']);
+});
+

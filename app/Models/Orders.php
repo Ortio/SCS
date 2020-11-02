@@ -13,6 +13,14 @@ class Orders extends Model
 //    protected $fillable = ['name', 'phone', 'model','color', 'price', 'delivery_price', 'sale_type', 'delivery_type',
 //        'address', 'store', 'status', 'sale_date'];
 
+    public $saleTypeArgs = ['Самовывоз', 'Доставка', 'Почта', 'СДЭК'];
+    public $receiveArgs = ['Наличные', 'Карта', 'Чек', 'СБЕР', 'Тинькофф'];
+    public $storeArgs = ['MyDilly', 'BabyWatch', 'PBS', 'Magic-Karaoke', 'All-Aks'];
+    public $statusArgs = ['process', 'sold', 'refused', 'shipped'];
+
+
+
+
     public function createNewData()
     {
         $this->create([
@@ -33,7 +41,7 @@ class Orders extends Model
 //        $this->save();
     }
 
-    public function orderFactory()
+    public function saleGoods()
     {
         return $this->hasMany(SaleGoods::class);
     }

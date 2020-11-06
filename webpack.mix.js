@@ -11,6 +11,29 @@ const mix = require('laravel-mix');
  |
  */
 
+// mix.webpackConfig({
+//     resolve: {
+//         modules: [
+//             path.resolve(__dirname, 'node_modules/bootstrap/dist'),
+//             path.resolve(__dirname, 'node_modules/jquery/dist'),
+//             path.resolve(__dirname, 'node_modules/vue/dist'),
+//             path.resolve(__dirname, 'node_modules/axios/dist'),
+//             path.resolve(__dirname, 'node_modules/lodash/dist'),
+//             path.resolve(__dirname, 'node_modules/popper.js/dist')
+//         ]
+//     }
+// });
+
+
+mix.extract([
+    'vue',
+    'jquery',
+    'bootstrap-vue',
+    'lodash',
+    '@popperjs/core',
+    'portal-vue'
+]).sourceMaps();
+
 mix.js('resources/js/app.js', 'public/js');
 mix.sass('resources/scss/app.scss', 'public/css/');
 mix.styles([
@@ -19,4 +42,4 @@ mix.styles([
     'resources/css/style.css',
     'resources/css/app.css',
 
-], 'public/css/all.css')
+], 'public/css/all.css');

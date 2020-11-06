@@ -17,12 +17,13 @@
         <div class="container-fluid">
             <section id="main-content">
                 @yield('content')
-            </div>
+            </section>
         </div>
     </div>
 </div>
 
-
-    <link rel="stylesheet" type="text/css" href="{{ asset('js/app.js') }}" />
+<script src="/js/manifest.js"></script>
+<script src="/js/vendor.js"></script>
+<script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 </html>

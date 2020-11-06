@@ -14,17 +14,16 @@ use App\Http\Controllers\OrdersController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
-Route::get('orders', [OrdersController::class, 'index']);
-
+Route::get('/', [OrdersController::class, 'index'])->name('home');
 
 Route::prefix('orders')->group(function (){
-    Route::get('create', [OrdersController::class, 'create']);
-    Route::get('{item}', [OrdersController::class, 'show']);//item - id
-    Route::post('{id}', [OrdersController::class, 'update']);
-    Route::post('create', [OrdersController::class, 'store']);
+    Route::get('create', [OrdersController::class, 'create'])->name('createOrder');
+    Route::get('{item}', [OrdersController::class, 'show'])->name('showOrder');//item - id
+    Route::post('{id}', [OrdersController::class, 'update'])->name('updateOrder');
+    Route::post('create', [OrdersController::class, 'store'])->name('storeOrder');
 });
 

@@ -23,22 +23,7 @@ class Orders extends Model
 
     public function createNewData()
     {
-        $this->create([
-            'name'              => 'Александр',
-            'phone'             => '89213110292',
-            'model'             => 'Магнитный держатель Baseus Magnetic Air Vent Car Mount Holder SUGX-A0V',
-            'color'             => 'золото',
-            'price'             => 368,
-            'delivery_price'    => 0,
-            'sale_type'         => 'Самовывоз',
-            'delivery_type'     => 'Наличные',
-            'address'           => '',
-            'store'             => 'MyDilly',
-            'status'            => 'sold',
-            'sale_date'         => '2020.09.01',
-        ]);
 
-//        $this->save();
     }
 
     public function saleGoods()

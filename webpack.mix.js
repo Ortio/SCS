@@ -35,11 +35,7 @@ mix.extract([
 ]).sourceMaps();
 
 mix.js('resources/js/app.js', 'public/js');
-mix.sass('resources/scss/app.scss', 'public/css/');
-mix.styles([
-    'resources/css/helper.css',
-    'resources/css/sidebar.css',
-    'resources/css/style.css',
-    'resources/css/app.css',
-
-], 'public/css/all.css');
+mix.sass('resources/scss/app.scss', 'public/css/app.css');
+// mix.styles([
+//'resources/css/app.css',
+// ], 'public/css/all.css');

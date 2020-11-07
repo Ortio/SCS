@@ -1,4 +1,7 @@
 require('./bootstrap');
+import { DropdownPlugin, TablePlugin } from 'bootstrap-vue';
+Vue.use(DropdownPlugin);
+Vue.use(TablePlugin);
 
 // const button = document.querySelector('#button');
 // const tooltip = document.querySelector('#tooltip');
@@ -6,15 +9,8 @@ require('./bootstrap');
 //     placement: 'right',
 // });
 
-import { DropdownPlugin, TablePlugin } from 'bootstrap-vue';
-Vue.use(DropdownPlugin);
-Vue.use(TablePlugin);
-
-
 Vue.component('table-component', require('./components/TableComponent').default);
 Vue.component('app-component', require('./components/AppComponent.vue').default);
-
-
 
 new Vue({
     el: "#content-vue",

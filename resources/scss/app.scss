@@ -1,5 +1,4 @@
-@import '~bootstrap/scss/bootstrap';
-@import '~bootstrap-vue/src/index.scss';
+@use "import";
 .comment-form {
     width:100%;
     min-height: 200px;
@@ -16,6 +15,10 @@ form.form-horizontal{
 .card-content .form-group{
     margin-bottom: 0px;
 }
+tbody tr td{
+    color: #0f0f0f;
+}
+
 
 
 

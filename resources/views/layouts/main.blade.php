@@ -12,14 +12,15 @@
     <title>Document</title>
 </head>
 <body>
-<div class="content-wrap">
-    <div class="main">
-        <div class="container-fluid">
-            <section id="main-content">
-                @yield('content')
-            </section>
-        </div>
-    </div>
+<div class="content-wrap" id="main">
+    <table-component :data='@json($data)' />
+{{--    <div class="main">--}}
+{{--        <div class="container-fluid">--}}
+{{--            <section id="main-content">--}}
+{{--                @yield('content')--}}
+{{--            </section>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 </div>
 
 <script src="/js/manifest.js"></script>

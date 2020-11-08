@@ -15,7 +15,7 @@
 {{--        @endforeach--}}
 {{--    </table>--}}
 <div id="content-vue">
-    <table-component :data='@json($data)' />
+
 {{--    <blog-post--}}
 {{--        v-for="post in posts"--}}
 {{--        v-bind:key="post.id"--}}

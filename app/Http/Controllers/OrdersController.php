@@ -15,20 +15,13 @@ class OrdersController extends Controller
      */
     public function index()
     {
-//        dd($items);
-//        return view('layouts.examp', compact('items'));
-//        $data = [
-//            ['id' => 1, 'name' => 'Admin'],
-//            ['id' => 2, 'name' => 'Truehero'],
-//            ['id' => 3, 'name' => 'Truecoder'],
-//        ];
-//
 //        return view('layouts.examp', ['data' => $data]);
 
-        $data = Orders::all();
-        return view('orders.index', compact('data'));
-
-
+//        return response()->json([
+//            'data' => Orders::all()->toJson()
+//        ]);
+        return Orders::all()->toJson();
+//        return view('index', compact('data'));
     }
 
     /**

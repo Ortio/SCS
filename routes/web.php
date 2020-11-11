@@ -18,6 +18,9 @@ use App\Http\Controllers\OrdersController;
 //    return view('welcome');
 //});
 
+Route::get('/{any}', function (){
+    return view('index');
+})->where('any', '.*');
 //Route::get('/', [OrdersController::class, 'index'])->name('home');
 //
 //Route::prefix('orders')->group(function (){

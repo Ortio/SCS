@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 
+//Route::resource('/', OrdersController::class)->name('index', 'home');
 Route::get('/', [OrdersController::class, 'index'])->name('home');
 
 Route::prefix('orders')->group(function (){

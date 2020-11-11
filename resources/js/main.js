@@ -1,10 +1,15 @@
 require('./bootstrap');
+window.Vue = require('vue');
+import VueRouter from "vue-router";
 import { DropdownPlugin, TablePlugin } from 'bootstrap-vue';
 Vue.use(DropdownPlugin);
 Vue.use(TablePlugin);
+Vue.use(VueRouter)
 
-import VueRouter from "vue-router";
-import route from './route'
+// import route from './route';
+import router from './router';
+import App from "./components/App";
+
 // import Lang from "./lang";
 
 
@@ -14,11 +19,13 @@ import route from './route'
 //     placement: 'right',
 // });
 
-Vue.component('table-component', require('./components/TableComponent').default);
-Vue.component('app-component', require('./components/AppComponent.vue').default);
+// Vue.component('table-component', require('./components/TableComponent').default);
+// Vue.component('app-component', require('./components/AppComponent.vue').default);
 
 new Vue({
-    el: "#main",
+    el: "#app",
+    render: h=>h(App),
+    router,
     // template: "<table-component/>",
     // components: {},
 });

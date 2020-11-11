@@ -34,7 +34,7 @@ mix.extract([
     'portal-vue'
 ]).sourceMaps();
 
-mix.js('resources/js/app.js', 'public/js');
+mix.js('resources/js/main.js', 'public/js');
 mix.sass('resources/scss/app.scss', 'public/css/app.css');
 // mix.styles([
 //'resources/css/app.css',

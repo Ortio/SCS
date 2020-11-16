@@ -8,7 +8,7 @@ Vue.use(VueRouter)
 
 // import route from './route';
 import router from './router';
-import App from "./components/App";
+import App from "./App";
 
 // import Lang from "./lang";
 
@@ -26,8 +26,6 @@ new Vue({
     el: "#app",
     render: h=>h(App),
     router,
-    // template: "<table-component/>",
-    // components: {},
 });
 
 // console.log(route('home'));

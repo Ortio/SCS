@@ -1,13 +1,12 @@
 <template>
     <div>
-<!--        {{ items }}-->
         <b-table striped hover bordered :items="items" :fields="fields" :tbody-tr-class="rowClass" caption-top>
         </b-table>
     </div>
 </template>
 <script>
     import axios from 'axios';
-    // import r from '../route.js'
+
     export default {
         name: 'Orders',
         data() {
@@ -77,20 +76,18 @@
             }
         },
         mounted () {
-            this.getOrders();
+            this.getOrders('/api');
             // this.items = [dt];
 
         },
         methods: {
-            getOrders (){
+            getOrders (url){
                 // console.log(axios.get(r('home')));
-              return axios.get('/api')
+              return axios.get(url)
                    .then(response =>{
                        // const dt = response.data;
                        // console.log(dt[Object.keys(dt)[0]]);
                        this.items = response.data;
-                       // this.items = dt;
-
                    })
             },
             rowClass(item, type) {

@@ -11,8 +11,7 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 .idea
-/public/js
-/public/css
+/public
 /public/mix-manifest.json
 /resources/js/routes.json
 /resources/js/translation.js

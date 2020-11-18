@@ -1,7 +1,9 @@
 <template>
-    <div class="all-main-tpl">
+    <div class="all-main-tpl" :class="{'sidebar-hide': !isOpen}" >
 
-        <Sidebar />
+        <Sidebar/>
+        <Header @hideSidebar = "isOpen = !isOpen" />
+
         <div class="content-wrap">
             <div class="main">
                 <section id="main-content">
@@ -16,9 +18,13 @@
 <script>
     // import Orders from "../components/Orders";
     import Sidebar from "../components/app/Sidebar";
+    import Header from "../components/app/Header";
     export default {
         name: "MainLayout",
-        components: {Sidebar}
+        data: ()=>({
+            isOpen: true,
+        }),
+        components: {Sidebar, Header}
     }
 </script>
 

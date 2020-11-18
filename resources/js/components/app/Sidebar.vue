@@ -16,16 +16,6 @@
                     >
                         <a href="/">{{link.title}}</a>
                     </router-link>
-
-
-<!--                    <li><a class="sidebar-sub-toggle"><i class="ti-home">-->
-<!--                    </i> Dashboard <span class="badge badge-primary">2</span>-->
-<!--                        <span class="sidebar-collapse-icon ti-angle-down"></span></a>-->
-<!--                        <ul>-->
-<!--                            <li><a href="index.html">Dashboard 1</a></li>-->
-<!--                            <li><a href="index1.html">Dashboard 2</a></li>-->
-<!--                        </ul>-->
-<!--                    </li>-->
                 </ul>
             </div>
         </div>
@@ -35,12 +25,16 @@
 <script>
     export default {
         name: "Sidebar",
+        props: ['value'],
         data: () => ({
             links: [
                 {title: 'Home', url: '/', exact: true},
                 {title: 'Orders', url: '/orders'}
             ]
-        })
+        }),
+        mounted () {
+            // console.log(this.value);
+        }
 
     }
 </script>

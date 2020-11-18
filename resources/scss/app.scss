@@ -22,3 +22,14 @@ tbody tr td{
 thead tr th:last-child {
     text-align: left;
 }
+.header .date-time{
+    font-size: 18px;
+    top: 15px;
+    padding: 0 13px;
+    color: #252525;
+    position: relative;
+    transition: all 0.4s ease-in-out;
+    display: inline-block;
+    vertical-align: middle;
+    float: left;
+}

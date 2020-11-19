@@ -42,8 +42,8 @@ class OrdersController extends Controller
      */
     public function store(Request $request)
     {
-        echo 'sadfsdaf';
-        dd($request);
+//        echo 'sadfsdaf';
+//        dd($request);
     }
 
     /**
@@ -54,8 +54,9 @@ class OrdersController extends Controller
      */
     public function show(Orders $item)
     {
-        $goods = $item->saleGoods;
-        return view('orders.single', compact(['item','goods']));
+//        $goods = $item->saleGoods;
+        return $item->saleGoods->toJson();
+//        return view('orders.single', compact(['item','goods']));
     }
 
     /**
